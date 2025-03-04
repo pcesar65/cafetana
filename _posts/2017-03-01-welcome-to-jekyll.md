@@ -1,5 +1,5 @@
 ---
-title: "Welcome to CAFETANA BITCH HAHAHAHAAHAHAH"
+title: "Welcome to CAFETANA"
 layout: post
 ---
 
