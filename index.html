@@ -116,6 +116,12 @@
         .toxica-meter button:hover {
             background-color: #e64a19;
         }
+        .live-counter {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ff5733;
+        }
     </style>
 </head>
 <body>
@@ -146,6 +152,8 @@
             <p>Take our quick quiz to find out!</p>
             <button onclick="alert('You are 100% Tóxica! 😈🔥')">Find Out Now</button>
         </div>
+        
+        <div class="live-counter">🔥 People Who Have Embraced the Tóxica Life: <span id="counter">0</span></div>
     </div>
     
     <script>
@@ -157,6 +165,14 @@
                 sidebar.style.width = "250px";
             }
         }
+
+        function updateCounter() {
+            let count = localStorage.getItem("toxicaCounter") || 0;
+            count++;
+            localStorage.setItem("toxicaCounter", count);
+            document.getElementById("counter").textContent = count;
+        }
+        updateCounter();
     </script>
 </body>
 </html>
