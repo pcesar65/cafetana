@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customize Your Tóxica Shirt</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 10px;
+        }
+        .shirt-preview {
+            width: 250px;
+            height: 300px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        select, input, button {
+            font-size: 16px;
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .ad-bar {
+            width: 100%;
+            background-color: #ff5733;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 4vw;
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .ad-bar a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Customize Your Tóxica Shirt 🔥</h2>
+
+    <!-- Shirt Preview -->
+    <div class="shirt-preview" id="shirt">
+        Your Text Here
+    </div>
+
+    <!-- Shirt Customizer Controls -->
+    <div class="controls">
+        <input type="text" id="custom-text" placeholder="Enter Your Text">
+        <select id="shirt-color">
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="white">White</option>
+            <option value="pink">Pink</option>
+        </select>
+        <button onclick="updateShirt()">Preview Shirt</button>
+        <button onclick="buyShirt()">Buy Now</button>
+    </div>
+
+    <!-- Ad Bar -->
+    <div class="ad-bar">
+        <a href="https://yourtoxicashop.com" target="_blank">🔥 Buy More Tóxica Shirts Here 🔥</a>
+    </div>
+
+    <script>
+        function updateShirt() {
+            const text = document.getElementById("custom-text").value;
+            const color = document.getElementById("shirt-color").value;
+            const shirt = document.getElementById("shirt");
+
+            // Update Shirt Preview
+            shirt.textContent = text || "Your Text Here"; // Default text
+            shirt.style.backgroundColor = color;
+            shirt.style.color = (color === "black") ? "white" : "black"; // Adjust text color
+        }
+
+        function buyShirt() {
+            const text = document.getElementById("custom-text").value;
+            const color = document.getElementById("shirt-color").value;
+
+            // Redirect to purchase page with custom options
+            const url = `https://yourtoxicashop.com/custom-shirt?text=${encodeURIComponent(text)}&color=${color}`;
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>
