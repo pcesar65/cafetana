@@ -1,4 +1,4 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,13 +15,13 @@ DOCTYPE html>
             text-align: center;
         }
         .header {
-            background-color: #ff5733;
-            color: white;
+            background-color: #ffffff;
+            color: #333;
             padding: 20px;
             font-size: 36px;
             font-weight: bold;
             text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,7 +44,7 @@ DOCTYPE html>
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .cta-button {
-            background-color: #ff5733;
+            background-color: #333;
             color: white;
             padding: 15px 20px;
             text-decoration: none;
@@ -56,17 +56,19 @@ DOCTYPE html>
             transition: 0.3s ease-in-out;
         }
         .cta-button:hover {
-            background-color: #e64a19;
+            background-color: #555;
         }
         .product-images {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .product-images img {
             width: 100%;
-            max-width: 400px;
+            max-width: 350px;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
@@ -85,18 +87,35 @@ DOCTYPE html>
         }
         .footer {
             margin-top: 40px;
-            padding: 20px;
-            background-color: #ff5733;
+            padding: 30px;
+            background-color: #333;
             color: white;
             font-size: 14px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
+            gap: 40px;
         }
-        .footer img {
-            width: 24px;
-            height: 24px;
+        .footer-section {
+            text-align: left;
+        }
+        .footer-section h4 {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .footer-section ul li a:hover {
+            color: #fff;
         }
     </style>
 </head>
@@ -116,8 +135,8 @@ DOCTYPE html>
         <div class="product-section">
             <h2>Featured Products</h2>
             <div class="product-images">
-                <img src="/picture/shirt1.jpg" alt="Tóxica Shirt 1">
-                <img src="/picture/shirt2.jpg" alt="Tóxica Shirt 2">
+                <img src="picture/shirt1.jpg" alt="Tóxica Shirt 1">
+                <img src="picture/shirt2.jpg" alt="Tóxica Shirt 2">
             </div>
             <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
         </div>
@@ -143,10 +162,28 @@ DOCTYPE html>
     </div>
 
     <div class="footer">
-        &copy; 2025 Cafetana. All rights reserved.
-        <a href="https://instagram.com/cafetana" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        </a>
+        <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>About Cafetana</h4>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <ul>
+                <li><a href="https://instagram.com/cafetana">Instagram</a></li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
