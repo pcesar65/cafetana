@@ -11,7 +11,31 @@
             padding: 0;
             background-color: #fff8e1;
             color: #333;
-            display: flex;
+            text-align: center;
+        }
+        .header {
+            background-color: #ff5733;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .menu-button {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: 15px;
         }
         .sidebar {
             height: 100%;
@@ -43,34 +67,10 @@
             font-size: 25px;
             cursor: pointer;
         }
-        .menu-button {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: transparent;
-            border: none;
-            color: #ff5733;
-            padding: 15px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-        .header {
-            flex-grow: 1;
-            background-color: transparent;
-            color: #ff5733;
-            padding: 15px;
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: right;
-            margin-right: 20px;
-        }
         .main-content {
-            padding: 40px 20px;
+            padding: 80px 20px 40px; /* Adjusted padding to prevent overlap with the fixed header */
             max-width: 800px;
             margin: auto;
-            text-align: center;
         }
         .toxica-gif {
             margin-top: 20px;
@@ -97,8 +97,10 @@
     </style>
 </head>
 <body>
-    <button class="menu-button" onclick="openNav()">☰ Menu</button>
-    <div class="header">🔥 Cafetana ☕🔥</div>
+    <div class="header">
+        <button class="menu-button" onclick="openNav()">☰</button>
+        Cafetana ☕🔥
+    </div>
     
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
