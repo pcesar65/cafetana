@@ -16,71 +16,24 @@
         .header {
             background-color: #ff5733;
             color: white;
-            padding: 15px;
-            font-size: 24px;
+            padding: 20px;
+            font-size: 28px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        .menu-button {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: transparent;
-            border: none;
-            color: white;
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            right: 0;
-            background-color: #ff5733;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            color: white;
-        }
-        .sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 20px;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-        .sidebar a:hover {
-            background-color: #e64a19;
-        }
-        .sidebar .closebtn {
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 25px;
-            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .main-content {
-            padding: 100px 20px 40px;
+            padding: 40px 20px;
             max-width: 800px;
             margin: auto;
         }
-        .animated-text {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ff5733;
-            animation: fadeIn 3s ease-in-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        .about-section {
+            background-color: #ffe0b2;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .cta-button {
             background-color: #ff5733;
@@ -96,84 +49,37 @@
         }
         .cta-button:hover {
             background-color: #e64a19;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
-        .toxica-meter {
+        .footer {
             margin-top: 40px;
             padding: 20px;
-            background-color: #ffe0b2;
-            border-radius: 10px;
-        }
-        .toxica-meter button {
-            background-color: #ff5733;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .toxica-meter button:hover {
-            background-color: #e64a19;
-        }
-        .live-counter {
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #ff5733;
+            background-color: #ffcc80;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        Cafetana ☕🔥
-        <button class="menu-button" onclick="toggleNav()">☰</button>
-    </div>
-    
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
-        <a href="#about">About</a>
-        <a href="https://yourtoxicashop.com">Shop</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </div>
-    
+    <div class="header">🔥 Welcome to Cafetana ☕🔥</div>
+
     <div class="main-content">
-        <div class="about-section" id="about">
+        <div class="about-section">
             <h2>What is Tóxica? 😈</h2>
-            <p class="animated-text">"Tóxica" is more than just a word—it's a vibe. It's an attitude of confidence, boldness, and being unapologetically yourself.</p>
+            <p>
+                "Tóxica" is more than just a word—it's a vibe. It's an attitude of confidence, boldness, and being unapologetically yourself. Whether you're rocking it with pride or just having fun, our Tóxica-inspired apparel represents empowerment, humor, and culture. 
+            </p>
+            <p>
+                At Cafetana, we blend **Latino culture, humor, and fashion** to bring you the best Tóxica shirts and accessories. Show your inner Tóxica with our exclusive designs! 💃🔥
+            </p>
         </div>
         
         <h2>Explore Our Tóxica Collection</h2>
         <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
-        
-        <div class="toxica-meter">
-            <h2>How Tóxica Are You? 🤔</h2>
-            <p>Take our quick quiz to find out!</p>
-            <button onclick="alert('You are 100% Tóxica! 😈🔥')">Find Out Now</button>
-        </div>
-        
-        <div class="live-counter">🔥 People Who Have Embraced the Tóxica Life: <span id="counter">0</span></div>
     </div>
     
-    <script>
-        function toggleNav() {
-            let sidebar = document.getElementById("mySidebar");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-            } else {
-                sidebar.style.width = "250px";
-            }
-        }
-
-        function updateCounter() {
-            let count = localStorage.getItem("toxicaCounter") || 0;
-            count++;
-            localStorage.setItem("toxicaCounter", count);
-            document.getElementById("counter").textContent = count;
-        }
-        updateCounter();
-    </script>
+    <div class="footer">
+        &copy; 2025 Cafetana. All rights reserved. | Follow us on Instagram @Cafetana
+    </div>
 </body>
 </html>
 
