@@ -15,14 +15,35 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 10px;
+            flex-direction: column;
         }
         article {
             font-size: 8vw; /* Increased size */
             font-weight: bold;
             max-width: 90%;
             color: #333;
-            word-wrap: break-word; /* Ensures wrapping */
-            line-height: 1.2; /* Adjust spacing */
+            word-wrap: break-word;
+            line-height: 1.2;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ad-bar {
+            width: 100%;
+            background-color: #ff5733; /* Tóxica theme color */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 4vw;
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .ad-bar a {
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -30,5 +51,8 @@
     <article>
         {{ content }}
     </article>
+    <div class="ad-bar">
+        <a href="https://yourtoxicashop.com" target="_blank">🔥 Buy More Tóxica Shirts Here 🔥</a>
+    </div>
 </body>
 </html>
