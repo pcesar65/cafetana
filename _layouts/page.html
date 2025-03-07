@@ -1,3 +1,31 @@
-<article>
-  {{ content }}
-</article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Message for Babe</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        article {
+            font-size: 5vw; /* Adjusts based on screen width */
+            font-weight: bold;
+            max-width: 90%;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        {{ content }}
+    </article>
+</body>
+</html>
