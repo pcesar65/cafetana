@@ -22,6 +22,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,8 +45,8 @@
             margin-bottom: 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-in-out, transform 1s ease;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .cta-button {
             background-color: #ff5733;
@@ -63,6 +64,7 @@
         .cta-button:hover {
             background-color: #e64a19;
             transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(255, 87, 51, 1);
         }
         .reviews {
             margin-top: 30px;
@@ -118,16 +120,31 @@
         <div class="reviews">
             <h3>Customer Reviews ⭐⭐⭐⭐⭐</h3>
             <p><strong>Maria L. (5/5):</strong> "These shirts made me embrace my inner Tóxica. My boyfriend isn't happy, but I love it!"</p>
-            <p><strong>Jessica R. (4.5/5):</strong> "Super comfy and hilarious. I've never felt so confident being called Tóxica!"</p>
-            <p><strong>Luisa M. (5/5):</strong> "This shirt is a whole mood. My mom saw me wearing it and nodded in approval."</p>
+            <p><strong>Jessica R. (4.5/5):</strong> "Super comfy and hilarious. I've never felt so confident being called Tóxica."</p>
+            <p><strong>Andrea P. (5/5):</strong> "Bought one for me and one for my best friend. Now we're officially Tóxica twins!"</p>
         </div>
     </div>
 
     <div class="footer">
-        &copy; 2025 Cafetana. All rights reserved.
+        &copy; 2025 Cafetana. All rights reserved. 
         <a href="https://instagram.com/cafetana" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
         </a>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const aboutSection = document.getElementById("about");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        aboutSection.style.opacity = "1";
+                        aboutSection.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.5 });
+            observer.observe(aboutSection);
+        });
+    </script>
 </body>
 </html>
