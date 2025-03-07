@@ -10,32 +10,73 @@
             margin: 0;
             padding: 0;
             background-color: #fff8e1;
-            text-align: center;
             color: #333;
+            display: flex;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ff5733;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #e64a19;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .menu-button {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: #ff5733;
+            padding: 15px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
         .header {
-            background-color: #ff5733;
-            color: white;
+            flex-grow: 1;
+            background-color: transparent;
+            color: #ff5733;
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
-            overflow: hidden;
+            text-align: right;
+            margin-right: 20px;
         }
         .main-content {
             padding: 40px 20px;
             max-width: 800px;
             margin: auto;
+            text-align: center;
         }
-        .about-section {
-            background-color: #ffe0b2;
-            padding: 20px;
+        .toxica-gif {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
             border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .cta-button {
             background-color: #ff5733;
@@ -53,78 +94,39 @@
             background-color: #e64a19;
             transform: scale(1.05);
         }
-        .testimonials {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #fff3e0;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .testimonial {
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        .stars {
-            color: #ffcc00;
-            font-size: 20px;
-        }
-        .toxica-gif {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-        }
-        .footer {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #ffcc80;
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
+    <button class="menu-button" onclick="openNav()">☰ Menu</button>
     <div class="header">🔥 Cafetana ☕🔥</div>
-
+    
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#about">About</a>
+        <a href="https://yourtoxicashop.com">Shop</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </div>
+    
     <div class="main-content">
-        <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Tóxica Vibes" class="toxica-gif">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWlheWtsb2xtZHN0anhyem00ZWtzMXdrc256NHl2emwxMWQ3czVxMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7qYA64ZOYn7oZiaees/giphy.gif" alt="Tóxica Vibes" class="toxica-gif">
         
-        <div class="about-section">
+        <div class="about-section" id="about">
             <h2>What is Tóxica? 😈</h2>
-            <p>
-                "Tóxica" is more than just a word—it's a vibe. It's an attitude of confidence, boldness, and being unapologetically yourself. Whether you're rocking it with pride or just having fun, our Tóxica-inspired apparel represents empowerment, humor, and culture. 
-            </p>
-            <p>
-                At Cafetana, we blend **Latino culture, humor, and fashion** to bring you the best Tóxica shirts and accessories. Show your inner Tóxica with our exclusive designs! 💃🔥
-            </p>
+            <p>"Tóxica" is more than just a word—it's a vibe. It's an attitude of confidence, boldness, and being unapologetically yourself.</p>
         </div>
         
         <h2>Explore Our Tóxica Collection</h2>
         <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
     </div>
     
-    <div class="testimonials">
-        <h2>What Our Customers Say 💬</h2>
-        <div class="testimonial">
-            <p>"I wore this shirt once and now my ex won’t stop calling me! 10/10, highly recommend."</p>
-            <div class="stars">★★★★★</div>
-            <p>- Maria G.</p>
-        </div>
-        <div class="testimonial">
-            <p>"I put on my Tóxica hoodie and suddenly my man started behaving right. Coincidence? I think not."</p>
-            <div class="stars">★★★★★</div>
-            <p>- Jessica R.</p>
-        </div>
-        <div class="testimonial">
-            <p>"This shirt is a whole mood. My mom saw me wearing it and just nodded in approval."</p>
-            <div class="stars">★★★★★</div>
-            <p>- Luisa M.</p>
-        </div>
-    </div>
-    
-    <div class="footer">
-        &copy; 2025 Cafetana. All rights reserved. | Follow us on Instagram @Cafetana
-    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
 </body>
-</html>
-
 </html>
