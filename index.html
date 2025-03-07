@@ -21,12 +21,13 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0<, 0.2);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
+            animation: fadeIn 1.5s ease-in-out;
         }
         .logo {
             width: 50px;
@@ -43,6 +44,9 @@
             border-radius: 10px;
             margin-bottom: 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .cta-button {
             background-color: #ff5733;
@@ -55,28 +59,41 @@
             display: inline-block;
             margin-top: 20px;
             transition: 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(255, 87, 51, 0.8);
         }
         .cta-button:hover {
             background-color: #e64a19;
             transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(255, 87, 51, 1);
         }
         .footer {
             margin-top: 40px;
             padding: 20px;
-            background-color: #ffcc80;
+            background: linear-gradient(to right, #ff5733, #ffcc80);
             font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .footer img {
+            width: 24px;
+            height: 24px;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    
     <div class="header">
-        <img src="/picture/cafetana_logo_transparent-2.png" alt="Cafetana Logo" class="logo">
+        <img src="picture/cafetana_logo_transparent-2.png" alt="Cafetana Logo" class="logo">
         Cafetana
     </div>
 
     <div class="main-content">
-        <div class="about-section">
+        <div class="about-section" id="about">
             <h2>What is Tóxica? 😈</h2>
             <p>
                 "Tóxica" is more than just a word—it's a vibe. It's an attitude of confidence, boldness, and being unapologetically yourself. Whether you're rocking it with pride or just having fun, our Tóxica-inspired apparel represents empowerment, humor, and culture. 
@@ -91,8 +108,29 @@
     </div>
     
     <div class="footer">
-        &copy; 2025 Cafetana. All rights reserved. | Follow us on Instagram @Cafetana
+        &copy; 2025 Cafetana. All rights reserved. 
+        <a href="https://instagram.com/cafetana" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com/@cafetana" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TikTok_logo.svg" alt="TikTok">
+        </a>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const aboutSection = document.getElementById("about");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        aboutSection.style.opacity = "1";
+                        aboutSection.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.5 });
+            observer.observe(aboutSection);
+        });
+    </script>
 </body>
 </html>
 
