@@ -1,10 +1,78 @@
----
-layout: default
-title: "Home"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Cafetana - Tóxica Culture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8e1;
+            text-align: center;
+            color: #333;
+        }
+        .header {
+            background-color: #ff5733;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .main-content {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .about-section {
+            background-color: #ffe0b2;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background-color: #ff5733;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffcc80;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Welcome to Cafetana ☕🔥</div>
 
-{% if site.show_excerpts %}
-  {% include home.html %}
-{% else %}
-  {% include archive.html title="Posts" %}
-{% endif %}
+    <div class="main-content">
+        <div class="about-section">
+            <h2>What is Tóxica? 😈</h2>
+            <p>
+                "Tóxica" is more than just a word—it's a vibe. It's an attitude of confidence, boldness, and being unapologetically yourself. Whether you're rocking it with pride or just having fun, our Tóxica-inspired apparel represents empowerment, humor, and culture. 
+            </p>
+            <p>
+                At Cafetana, we blend **Latino culture, humor, and fashion** to bring you the best Tóxica shirts and accessories. Show your inner Tóxica with our exclusive designs! 💃🔥
+            </p>
+        </div>
+        
+        <h2>Explore Our Tóxica Collection</h2>
+        <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
+    </div>
+    
+    <div class="footer">
+        &copy; 2025 Cafetana. All rights reserved. | Follow us on Instagram @Cafetana
+    </div>
+</body>
+</html>
