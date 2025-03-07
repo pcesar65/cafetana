@@ -68,15 +68,9 @@
             cursor: pointer;
         }
         .main-content {
-            padding: 80px 20px 40px; /* Adjusted padding to prevent overlap with the fixed header */
+            padding: 80px 20px 40px;
             max-width: 800px;
             margin: auto;
-        }
-        .toxica-gif {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
         }
         .cta-button {
             background-color: #ff5733;
@@ -99,11 +93,11 @@
 <body>
     <div class="header">
         Cafetana ☕🔥
-        <button class="menu-button" onclick="openNav()">☰</button>
+        <button class="menu-button" onclick="toggleNav()">☰</button>
     </div>
     
     <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
         <a href="#about">About</a>
         <a href="https://yourtoxicashop.com">Shop</a>
         <a href="#testimonials">Testimonials</a>
@@ -111,8 +105,6 @@
     </div>
     
     <div class="main-content">
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWlheWtsb2xtZHN0anhyem00ZWtzMXdrc256NHl2emwxMWQ3czVxMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7qYA64ZOYn7oZiaees/giphy.gif" alt="Tóxica Vibes" class="toxica-gif">
-        
         <div class="about-section" id="about">
             <h2>What is Tóxica? 😈</h2>
             <p>"Tóxica" is more than just a word—it's a vibe. It's an attitude of confidence, boldness, and being unapologetically yourself.</p>
@@ -123,12 +115,15 @@
     </div>
     
     <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-        }
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
+        function toggleNav() {
+            let sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
         }
     </script>
 </body>
 </html>
+
