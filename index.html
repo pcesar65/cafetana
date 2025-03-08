@@ -58,16 +58,15 @@
         .cta-button:hover {
             background-color: #555;
         }
-        .reviews {
-            text-align: left;
-            padding: 10px 20px;
-        }
         .review-item {
-            padding: 10px;
             border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            text-align: left;
         }
         .review-item:last-child {
             border-bottom: none;
+            margin-bottom: 0;
         }
         .stars {
             color: #ffc107;
@@ -80,11 +79,9 @@
             display: flex;
             justify-content: center;
             gap: 40px;
-            flex-wrap: wrap;
         }
         .footer-section h4 {
             margin-bottom: 10px;
-            text-transform: uppercase;
         }
         .footer-section ul {
             list-style: none;
@@ -112,36 +109,71 @@
             <p><strong>10% of our profits support Hispanic education initiatives.</strong></p>
         </div>
 
-        <h2>Explore Our Tóxica Collection</h2>
-        <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
-
-        <div class="reviews">
-            <h3>Customer Reviews ⭐⭐⭐⭐⭐</h3>
-            <div class="review-item">
-                <strong>Maria L. (5/5)</strong>
-                <p>"These shirts made me embrace my inner Tóxica. My boyfriend isn't happy, but I love it!"</p>
-            </div>
-            <div class="review-item">
-                <strong>Jessica R. (4.5/5)</strong>
-                <p>"Super comfy and hilarious. I've never felt so confident being called Tóxica."</p>
-            </div>
-            <div class="review-item">
-                <strong>Andrea P. (5/5)</strong>
-                <p>"Bought one for me and one for my best friend. Now we're officially Tóxica twins!"</p>
-            </div>
-            <div class="review-item">
-                <strong>Carla D. (5/5)</strong>
-                <p>"Even my suegra asked where I got my shirt. Totally worth it!"</p>
-            </div>
-            <div class="review-item">
-                <strong>Valeria S. (4.8/5)</strong>
-                <p>"Finally, shirts that match my energy. Love this brand!"</p>
-            </div>
-            <div class="review-item">
-                <strong>Ana M. (5/5)</strong>
-                <p>"My ex called me Tóxica, now I wear it proudly. Best purchase ever!"</p>
-            </div>
+        <div class="product-section">
+            <h2>Explore Our Tóxica Collection</h2>
+            <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
         </div>
+
+     <div class="reviews">
+    <h3>What Our Customers Say ⭐⭐⭐⭐⭐</h3>
+    <div class="review-slider">
+        <div class="review-item active">
+            <strong>Maria L. (5/5)</strong>
+            <p>"These shirts made me embrace my inner Tóxica. My boyfriend isn't happy, but I love it!"</p>
+        </div>
+        <div class="review-item">
+            <strong>Jessica R. (4.5/5)</strong>
+            <p>"Super comfy and hilarious. I've never felt so confident being called Tóxica."</p>
+        </div>
+        <div class="review-item">
+            <strong>Andrea P. (5/5)</strong>
+            <p>"Bought one for me and one for my best friend. Now we're officially Tóxica twins!"</p>
+        </div>
+        <div class="review-item">
+            <strong>Carla D. (5/5)</strong>
+            <p>"Even my suegra asked where I got my shirt. Totally worth it!"</p>
+        </div>
+        <div class="review-item">
+            <strong>Jessica R. (4.8/5)</strong>
+            <p>"Finally, shirts that match my energy. Love this brand!"</p>
+        </div>
+        <div class="review-item">
+            <strong>Ana M. (5/5)</strong>
+            <p>"My ex called me Tóxica, now I wear it proudly. Best purchase ever!"</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.review-slider {
+    position: relative;
+    overflow: hidden;
+    height: 130px;
+}
+.review-item {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+.review-item.active {
+    opacity: 1;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const reviews = document.querySelectorAll('.review-item');
+    let currentReview = 0;
+
+    setInterval(() => {
+        reviews[currentReview].classList.remove('active');
+        currentReview = (currentReview + 1) % reviews.length;
+        reviews[currentReview].classList.add('active');
+    }, 4000); // 4 seconds per review
+});
+</script>
+
     </div>
 
     <div class="footer">
@@ -149,12 +181,12 @@
             <h4>Customer Service</h4>
             <ul>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">Shipping</a></li>
                 <li><a href="#">FAQ</a></li>
             </ul>
         </div>
         <div class="footer-section">
-            <h4>About Us</h4>
+            <h4>About Cafetana</h4>
             <ul>
                 <li><a href="#">Our Story</a></li>
                 <li><a href="#">Careers</a></li>
@@ -162,7 +194,7 @@
             </ul>
         </div>
         <div class="footer-section">
-            <h4>Connect With Us</h4>
+            <h4>Social</h4>
             <ul>
                 <li><a href="https://instagram.com/cafetana">Instagram</a></li>
             </ul>
