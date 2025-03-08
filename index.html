@@ -58,33 +58,16 @@
         .cta-button:hover {
             background-color: #555;
         }
-        .product-images {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .product-images img {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
         .reviews {
-            position: relative;
-            overflow: hidden;
-        }
-        .review-container {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+            text-align: left;
+            padding: 10px 20px;
         }
         .review-item {
-            min-width: 100%;
-            box-sizing: border-box;
             padding: 10px;
-            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .review-item:last-child {
+            border-bottom: none;
         }
         .stars {
             color: #ffc107;
@@ -94,14 +77,10 @@
             padding: 30px;
             background-color: #333;
             color: white;
-            font-size: 14px;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 40px;
-        }
-        .footer-section {
-            text-align: left;
+            flex-wrap: wrap;
         }
         .footer-section h4 {
             margin-bottom: 10px;
@@ -110,9 +89,6 @@
         .footer-section ul {
             list-style: none;
             padding: 0;
-        }
-        .footer-section ul li {
-            margin-bottom: 5px;
         }
         .footer-section ul li a {
             color: #ccc;
@@ -136,33 +112,34 @@
             <p><strong>10% of our profits support Hispanic education initiatives.</strong></p>
         </div>
 
-        <div class="product-section">
-            <h2>Featured Products</h2>
-            <div class="product-images">
-                <img src="picture/shirt1.jpg" alt="Tóxica Shirt 1">
-                <img src="picture/shirt2.jpg" alt="Tóxica Shirt 2">
-            </div>
-            <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
-        </div>
+        <h2>Explore Our Tóxica Collection</h2>
+        <a href="https://yourtoxicashop.com" class="cta-button">Shop Now 🔥</a>
 
         <div class="reviews">
-            <h3>What Our Customers Say</h3>
-            <div class="review-container" id="reviews">
-                <div class="review-item">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <strong>Maria L.</strong>
-                    <p>"These shirts made me embrace my inner Tóxica. Love them!"</p>
-                </div>
-                <div class="review-item">
-                    <div class="stars">⭐⭐⭐⭐☆</div>
-                    <strong>Jessica R.</strong>
-                    <p>"Super comfy and funny. Feels great to be a proud Tóxica!"</p>
-                </div>
-                <div class="review-item">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <strong>Luisa M.</strong>
-                    <p>"My new favorite shirts. Even my mom approves!"</p>
-                </div>
+            <h3>Customer Reviews ⭐⭐⭐⭐⭐</h3>
+            <div class="review-item">
+                <strong>Maria L. (5/5)</strong>
+                <p>"These shirts made me embrace my inner Tóxica. My boyfriend isn't happy, but I love it!"</p>
+            </div>
+            <div class="review-item">
+                <strong>Jessica R. (4.5/5)</strong>
+                <p>"Super comfy and hilarious. I've never felt so confident being called Tóxica."</p>
+            </div>
+            <div class="review-item">
+                <strong>Andrea P. (5/5)</strong>
+                <p>"Bought one for me and one for my best friend. Now we're officially Tóxica twins!"</p>
+            </div>
+            <div class="review-item">
+                <strong>Carla D. (5/5)</strong>
+                <p>"Even my suegra asked where I got my shirt. Totally worth it!"</p>
+            </div>
+            <div class="review-item">
+                <strong>Valeria S. (4.8/5)</strong>
+                <p>"Finally, shirts that match my energy. Love this brand!"</p>
+            </div>
+            <div class="review-item">
+                <strong>Ana M. (5/5)</strong>
+                <p>"My ex called me Tóxica, now I wear it proudly. Best purchase ever!"</p>
             </div>
         </div>
     </div>
@@ -172,12 +149,12 @@
             <h4>Customer Service</h4>
             <ul>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Shipping</a></li>
-                <li><a href="#">Returns</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">FAQ</a></li>
             </ul>
         </div>
         <div class="footer-section">
-            <h4>About Cafetana</h4>
+            <h4>About Us</h4>
             <ul>
                 <li><a href="#">Our Story</a></li>
                 <li><a href="#">Careers</a></li>
@@ -185,20 +162,11 @@
             </ul>
         </div>
         <div class="footer-section">
-            <h4>Follow Us</h4>
+            <h4>Connect With Us</h4>
             <ul>
                 <li><a href="https://instagram.com/cafetana">Instagram</a></li>
             </ul>
         </div>
     </div>
-
-    <script>
-        let index = 0;
-        const reviews = document.getElementById('reviews');
-        setInterval(() => {
-            index = (index + 1) % reviews.children.length;
-            reviews.style.transform = `translateX(-${index * 100}%)`;
-        }, 3000);
-    </script>
 </body>
 </html>
