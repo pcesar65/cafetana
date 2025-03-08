@@ -75,29 +75,35 @@
         .reviews {
             position: relative;
             overflow: hidden;
-            height: 180px;
-            padding-top: 40px;
+            height: 200px;
+            padding-top: 45px;
         }
         .reviews h3 {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 2;
+            z-index: 10;
             background-color: #f9f9f9;
             padding: 0 10px;
         }
         .review-item {
             position: absolute;
-            top: 50%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 90%;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            text-align: center;
         }
         .review-item.active {
             opacity: 1;
+        }
+        .stars {
+            color: #ffc107;
+            font-size: 20px;
+            margin-bottom: 8px;
         }
         .footer {
             margin-top: 40px;
@@ -148,7 +154,48 @@
 
         <div class="reviews">
             <h3>What Our Customers Say ⭐⭐⭐⭐⭐</h3>
-            <div class="review-item active"><strong>Joseph F. (0/5)</strong><p>"Man I decide to go out one night with the boys and she wouldnt let me go out unless I put this shirt on. A real toxica 😭"</p></div>
+
+            <div class="review-item active">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <strong>Maria L.</strong>
+                <p>"These shirts made me embrace my inner Tóxica. My boyfriend isn't happy, but I love it!"</p>
+            </div>
+
+            <div class="review-item">
+                <div class="stars">⭐⭐⭐⭐☆</div>
+                <strong>Jessica R.</strong>
+                <p>"Super comfy and hilarious. I've never felt so confident being called Tóxica."</p>
+            </div>
+
+            <div class="review-item">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <strong>Andrea P.</strong>
+                <p>"Bought one for me and one for my best friend. Now we're officially Tóxica twins!"</p>
+            </div>
+
+            <div class="review-item">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <strong>Carla D.</strong>
+                <p>"Even my suegra asked where I got my shirt. Totally worth it!"</p>
+            </div>
+
+            <div class="review-item">
+                <div class="stars">⭐⭐⭐⭐☆</div>
+                <strong>Valeria S.</strong>
+                <p>"Finally, shirts that match my energy. Love this brand!"</p>
+            </div>
+
+            <div class="review-item">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <strong>Ana M.</strong>
+                <p>"My ex called me Tóxica, now I wear it proudly. Best purchase ever!"</p>
+            </div>
+
+            <div class="review-item">
+                <div class="stars">☆☆☆☆☆</div>
+                <strong>Joseph F.</strong>
+                <p>"Man I decide to go out one night with the boys and she wouldn't let me go out unless I put this shirt on. A real toxica 😭"</p>
+            </div>
         </div>
     </div>
 
@@ -176,14 +223,16 @@
             </ul>
         </div>
     </div>
+
     <script>
         const reviews = document.querySelectorAll('.review-item');
-        let currentReview = 0;
+        let current = 0;
+
         setInterval(() => {
-            reviews[currentReview].classList.remove('active');
-            currentReview = (currentReview + 1) % reviews.length;
-            reviews[currentReview].classList.add('active');
-        }, 3000);
+            reviews[current].classList.remove('active');
+            current = (current + 1) % reviews.length;
+            reviews[current].classList.add('active');
+        }, 2500); // slides every 2.5 seconds
     </script>
 </body>
 </html>
