@@ -75,22 +75,29 @@
         .reviews {
             position: relative;
             overflow: hidden;
-            height: 150px;
+            height: 180px;
+            padding-top: 40px;
+        }
+        .reviews h3 {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            background-color: #f9f9f9;
+            padding: 0 10px;
         }
         .review-item {
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             width: 90%;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
         .review-item.active {
             opacity: 1;
-        }
-        .stars {
-            color: #ffc107;
         }
         .footer {
             margin-top: 40px;
@@ -141,23 +148,41 @@
 
         <div class="reviews">
             <h3>What Our Customers Say ⭐⭐⭐⭐⭐</h3>
-            <div class="review-item active"><strong>Maria L. (5/5)</strong><p>"These shirts made me embrace my inner Tóxica. My boyfriend isn't happy, but I love it!"</p></div>
-            <div class="review-item"><strong>Jessica R. (4.5/5)</strong><p>"Super comfy and hilarious. I've never felt so confident being called Tóxica."</p></div>
-            <div class="review-item"><strong>Andrea P. (5/5)</strong><p>"Bought one for me and one for my best friend. Now we're officially Tóxica twins!"</p></div>
-            <div class="review-item"><strong>Carla D. (5/5)</strong><p>"Even my suegra asked where I got my shirt. Totally worth it!"</p></div>
-            <div class="review-item"><strong>Jessica R. (4.8/5)</strong><p>"Finally, shirts that match my energy. Love this brand!"</p></div>
-            <div class="review-item"><strong>Ana M. (5/5)</strong><p>"My ex called me Tóxica, now I wear it proudly. Best purchase ever!"</p></div>
-            <div class="review-item"><strong>Joseph F. (0/5)</strong><p>"Man I decide to go out one night with the boys and she wouldnt let me go out unless i put this shirt on. A real toxica 😭"</p></div>
+            <div class="review-item active"><strong>Joseph F. (0/5)</strong><p>"Man I decide to go out one night with the boys and she wouldnt let me go out unless I put this shirt on. A real toxica 😭"</p></div>
         </div>
     </div>
 
+    <div class="footer">
+        <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>About Cafetana</h4>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Social</h4>
+            <ul>
+                <li><a href="https://instagram.com/cafetana">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
     <script>
         const reviews = document.querySelectorAll('.review-item');
-        let current = 0;
+        let currentReview = 0;
         setInterval(() => {
-            reviews[current].classList.remove('active');
-            current = (current + 1) % reviews.length;
-            reviews[current].classList.add('active');
+            reviews[currentReview].classList.remove('active');
+            currentReview = (currentReview + 1) % reviews.length;
+            reviews[currentReview].classList.add('active');
         }, 3000);
     </script>
 </body>
