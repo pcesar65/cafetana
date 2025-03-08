@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            text-align: center;
         }
         .container {
             max-width: 900px;
@@ -20,7 +21,6 @@
             padding: 20px;
         }
         h1, h2 {
-            text-align: center;
             color: #222;
         }
         .story-section, .mission-section {
@@ -28,14 +28,23 @@
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
-        .founders-image {
-            width: 100%;
-            max-width: 400px;
-            margin: 20px auto;
-            display: block;
-            border-radius: 10px;
+        .founder-profiles {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .founder {
+            text-align: center;
+        }
+        .founder img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .cta-button {
@@ -44,10 +53,9 @@
             background-color: #333;
             color: white;
             text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-            text-align: center;
-            margin: 20px auto;
+            transition: 0.3s;
         }
         .cta-button:hover {
             background-color: #555;
@@ -56,25 +64,30 @@
 </head>
 <body>
     <div class="container">
-        <div class="story-section container">
-            <h1>Our Story ☕💑</h1>
-            <p>Cafetana was born from the dreams of a passionate couple who aspired to open their own coffee shop. Driven by a shared love for coffee, community, and culture, we initially envisioned creating a cozy café in the hearts of Chicanos everywhere. However, our journey took an unexpected but exciting turn.</p>
-            <p>Everywhere we went, whether at family gatherings, at work, or in casual conversations, the playful term "Tóxica" always came up. It was a humorous yet powerful reminder of our Latino roots and cultural expressions.</p>
-            <img src="picture/founders.jpg" alt="Founders" class="founders-section-image">
-            <p>Although our coffee dream remains alive, we discovered a passion in creating apparel that lets people embrace their individuality, humor, and culture. The Tóxica collection was born out of the belief that everyone deserves to express themselves boldly and proudly.</p>
-            <p>Today, Cafetana stands as more than just a brand. It's a statement, a vibe, and a community. Wear your personality proudly—whether you're a little Tóxica, or just celebrating life with style!</p>
-            <img src="picture/couple.jpg" alt="Our Story" class="story-image">
+        <div class="story-section">
+            <h1>About Cafetana ☕️</h1>
+            <p>We started with the dream of opening a coffee shop, but life had other plans. The humorous yet empowering concept of "Tóxica" led us to create apparel that embodies boldness, humor, and Latino culture. Our goal remains to someday open Cafetana Coffee shops, starting in Chino, CA.</p>
+        </div>
+
+        <div class="founder-section">
+            <h2>Meet Our Team</h2>
+            <div class="founder">
+                <img src="picture/cesar.jpg" alt="Cesar Perez">
+                <h3>Cesar Perez</h3>
+                <p>Owner & Developer</p>
+            </div>
+            <div class="founder">
+                <img src="picture/brenda.jpg" alt="Brenda Flores">
+                <h3>Brenda Flores</h3>
+                <p>Marketing</p>
+            </div>
         </div>
 
         <div class="mission-section">
-            <h2>Our Mission ☕❤️</h2>
-            <p>We are committed to creating a platform that celebrates Latino culture, empowers individuality, and supports our community. With every purchase, <strong>10% of profits go directly to supporting Hispanic education initiatives.</strong></p>
-            <p>Join us on our journey as we dream big, laugh louder, and live unapologetically. ¡Salud!</p>
+            <h2>Our Mission</h2>
+            <p>We proudly donate <strong>10% of profits</strong> towards Hispanic education initiatives, empowering the next generation of Latino leaders.</p>
         </div>
 
-        <img src="picture/couple.jpg" alt="Founders of Cafetana" class="founders-section founders-image">
-
-        <a href="https://yourtoxicashop.com" class="cta-button">Explore Our Shirts 🔥</a>
-    </div>
+        <a href="https://yourtoxicashop.com" class="cta-button">Shop Our Collection 🔥</a>
 </body>
 </html>
