@@ -72,15 +72,19 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .review-item {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-            text-align: left;
+        .reviews {
+            position: relative;
+            overflow: hidden;
         }
-        .review-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
+        .review-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .review-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: left;
         }
         .stars {
             color: #ffc107;
@@ -143,20 +147,22 @@
 
         <div class="reviews">
             <h3>What Our Customers Say</h3>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <strong>Maria L.</strong>
-                <p>"These shirts made me embrace my inner Tóxica. Love them!"</p>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐☆</div>
-                <strong>Jessica R.</strong>
-                <p>"Super comfy and funny. Feels great to be a proud Tóxica!"</p>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <strong>Luisa M.</strong>
-                <p>"My new favorite shirts. Even my mom approves!"</p>
+            <div class="review-container" id="reviews">
+                <div class="review-item">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <strong>Maria L.</strong>
+                    <p>"These shirts made me embrace my inner Tóxica. Love them!"</p>
+                </div>
+                <div class="review-item">
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <strong>Jessica R.</strong>
+                    <p>"Super comfy and funny. Feels great to be a proud Tóxica!"</p>
+                </div>
+                <div class="review-item">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <strong>Luisa M.</strong>
+                    <p>"My new favorite shirts. Even my mom approves!"</p>
+                </div>
             </div>
         </div>
     </div>
@@ -185,5 +191,14 @@
             </ul>
         </div>
     </div>
+
+    <script>
+        let index = 0;
+        const reviews = document.getElementById('reviews');
+        setInterval(() => {
+            index = (index + 1) % reviews.children.length;
+            reviews.style.transform = `translateX(-${index * 100}%)`;
+        }, 3000);
+    </script>
 </body>
 </html>
