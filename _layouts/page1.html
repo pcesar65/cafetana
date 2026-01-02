@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "Mensaje" }}</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Container for injected page content */
+    .page-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Style ONLY the text coming from the page */
+    .page-content p {
+      font-size: 8vw;
+      font-weight: bold;
+      max-width: 90%;
+      line-height: 1.2;
+
+      /* Mexican flag gradient */
+      background: linear-gradient(
+        90deg,
+        #006847 0%,
+        #006847 33%,
+        #F5F5F5 33%,
+        #F5F5F5 66%,
+        #CE1126 66%,
+        #CE1126 100%
+      );
+
+      background-size: 200% 100%;
+      animation: flagMove 3.2s ease-in-out infinite;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      /* Keeps white readable on white bg */
+      text-shadow: 0 2px 6px rgba(0,0,0,0.22);
+    }
+
+    @keyframes flagMove {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Bottom CTA bar */
+    .ad-bar {
+      width: 100%;
+      background-color: #CE1126; /* Mexican red */
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 4vw;
+      font-weight: bold;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    .ad-bar a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page-content">
+    {{ content }}
+  </main>
+
+  <div class="ad-bar">
+    <a href="https://yourtoxicashop.com" target="_blank">
+      🔥 Buy More Tóxica Shirts Here 🔥
+    </a>
+  </div>
+
+</body>
+</html>
