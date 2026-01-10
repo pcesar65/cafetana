@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "Smiski" }}</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .fullscreen-image {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fullscreen-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* PERFECT for iPhone, no cropping */
+      object-position: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fullscreen-image">
+    <img src="/picture/smiski.png" alt="Smiski Art">
+  </div>
+</body>
+</html>
